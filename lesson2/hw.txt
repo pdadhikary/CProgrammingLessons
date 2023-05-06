@@ -1,0 +1,4 @@
+Write a program that counts:
+    1. the number of characters (without white space ' ', '\t', '\n')
+    2. the number of words.
+    3. the number of digit characters.

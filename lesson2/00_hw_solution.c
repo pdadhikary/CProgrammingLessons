@@ -27,6 +27,6 @@ int main() {
     }
 
     printf("\nNumber of vowels = %d\n", vowel_count);
-
+    
     return 0;
 }
