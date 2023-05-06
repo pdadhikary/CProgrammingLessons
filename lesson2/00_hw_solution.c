@@ -2,18 +2,19 @@
 
 #include <stdio.h>
 
+#define OFFSET 32;
+
 int main() {
 
     int vowel_count = 0;
 
     char input = getchar();
     while(input != EOF) {
+        if (input >= 'A' && input <= 'Z') {
+            input += OFFSET;
+        }
+
         if (
-            input == 'A' ||
-            input == 'E' || 
-            input == 'I' ||
-            input == 'O' ||
-            input == 'U' ||
             input == 'a' ||
             input == 'e' ||
             input == 'i' ||

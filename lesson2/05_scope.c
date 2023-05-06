@@ -1,6 +1,6 @@
 // Section 1.10
-
 #include <stdio.h>
+#include <stdlib.h>
 
 #define PI 3.14 // we use this for constants that can never change
 

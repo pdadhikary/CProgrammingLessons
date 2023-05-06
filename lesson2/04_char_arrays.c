@@ -1,6 +1,6 @@
 // Section 1.9
-
 #include <stdio.h>
+#include <stdlib.h>
 
 int character_count(char[], int);
 

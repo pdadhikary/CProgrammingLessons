@@ -1,5 +1,6 @@
 // Section 1.6
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int arr[10]; // creating an array with 10 elements

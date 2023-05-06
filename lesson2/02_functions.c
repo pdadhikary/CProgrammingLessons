@@ -1,6 +1,6 @@
 // Section 1.7
-
 #include <stdio.h>
+#include <stdlib.h>
 
 // you must define the header of a function before implementing it
 // header is sometimes refered to as a signature
