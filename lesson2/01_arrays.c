@@ -17,7 +17,6 @@ int main() {
     for(int i = 0; i < 10; i++) {
         arr[i] = 0; // initalizing all the elements to 0
     }
-
     // lets count the frequency of digits 0-9 in a user's input
     char input = getchar();
     

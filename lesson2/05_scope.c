@@ -13,18 +13,17 @@ int hapiness = 0; // this is a global variable, every function can acess it and 
 
 int main() {
     printf("(main) happiness is %d\n", hapiness);
-
     hapiness = 10;
     foo();
     bar(43);
 
     printf("(main) happiness is %d\n", hapiness);
-
     return 0;
 }
 
 void foo() {
     printf("(foo) happiness is %d\n", hapiness);
+
 }
 
 void bar(int hapiness) { // here the hapiness function argument shadows the hapiness global variable

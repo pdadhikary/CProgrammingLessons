@@ -44,7 +44,6 @@ int main() {
     */
     printf("%s\n", another_name);
 
-
     printf("\nWrite some text here:\n");
     char vowels[] = "aeiouAEIOU";
     int vowel_count = character_count(vowels, 10);

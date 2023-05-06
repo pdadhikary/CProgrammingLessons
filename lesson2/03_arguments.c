@@ -11,7 +11,7 @@ int main() {
     printf("\nfirst 5 odd numbers:\n");
     range(1, 10, 2);
 
-    printf("\nmultiles of 5 between 5 and 50");
+    printf("\nmultipels of 5 between 5 and 50\n");
     range(5, 50, 5);
 
     /*
