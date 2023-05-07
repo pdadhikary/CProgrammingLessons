@@ -6,7 +6,7 @@ int main() {
     int character_count, digit_count, word_count;
     character_count = digit_count = word_count = 0;
     
-    int inside_word = 0;
+    int inside_word = 0; // flag variable
 
     char input = getchar();
     while(input != EOF) {

@@ -1,0 +1,4 @@
+Create a Caesar ciper encoder
+    - ask the user for some amount of shift (could be negative or positive)
+    - ask the user for their secret message.
+    - convert the secret message using the shift value.

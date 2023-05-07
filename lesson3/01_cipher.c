@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // constants
 #define OFFSET 32
@@ -29,14 +30,13 @@ int main() {
 
     // count the frequency of each character
     for (int i = 0; (element = lower(secret_message[i])) != '\0'; i++) {
-
         if (element >= 'a' && element <= 'z') {
             character_count[element - 'a'] += 1;
         }
     }
 
     // find which charater has the largest frequency
-    for (int i = 0; i < 25; i++) {
+    for (int i = 0; i < ALPHABET_LENGTH; i++) {
         if(character_count[i] > max_count) {
             max_idx = i;
             max_count = character_count[i];
