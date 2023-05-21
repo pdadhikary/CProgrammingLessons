@@ -16,16 +16,15 @@ struct Person **rsvp;
 
 int main() {
     rsvp = malloc(sizeof(struct Person*) * SIZE);
-    int stop = 0;
     int id = 0;
 
-    while (!stop)
+    while (1)
     {
         char *input = malloc(sizeof(char) * BUFFER);
         fgets(input, BUFFER, stdin);
 
         if (strcmp(input, "quit\n") == 0) {
-            stop = 1;
+            break;
         } else {
             char *name = malloc(sizeof(char) * BUFFER);
             int age;

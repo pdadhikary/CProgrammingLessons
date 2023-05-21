@@ -17,6 +17,7 @@ int main() {
 double montecarlo_simulation(int num_trials) {
     int num_sucesses = 0;
     for(int i = 0; i < num_trials; i++) {
+        // Throw a random dart
         struct Point *p = malloc(sizeof(struct Point));
         p->x = (double) rand() / (double) RAND_MAX;
         p->y = (double) rand() / (double) RAND_MAX;

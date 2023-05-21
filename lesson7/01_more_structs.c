@@ -4,19 +4,23 @@
 
 struct Counter {
     int count;
+    int step;
     int limit;
 };
 
 int main() {
-    struct Counter *c = malloc(sizeof(struct Counter));
+    struct Counter *c = malloc(sizeof(struct Counter)); // Counter c = new Counter();
 
     printf("Set timer:\n");
     scanf("%d", &c->limit);
+
+    printf("Set Step:\n");
+    scanf("%d", &c->step);
     
     printf("\n");
 
-    for (c->count = 1; c->count <= c->limit; c->count++) {
-        sleep(1);
+    for (c->count = 0; c->count <= c->limit; c->count += c->step) {
+        sleep(c->step);
         printf("%d\n", c->count);
     }
 
