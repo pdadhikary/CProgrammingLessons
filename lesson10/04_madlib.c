@@ -13,8 +13,7 @@ int main(int argc, char* argv[]) {
         char* buffer = malloc(sizeof(char) * SIZE);
         int token_count = 0;
         while(fgets(buffer, SIZE, file) != NULL) { // read until either the file ends
-            char* token = buffer;
-            for(token = strstr(token, "%s"); token != NULL; token += 2) {
+            for(char* token = buffer; (token = strstr(token, "%s")) != NULL; token += 2) {
                 token_count++;
             }
         }
