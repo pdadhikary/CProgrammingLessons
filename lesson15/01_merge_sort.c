@@ -6,11 +6,9 @@ int* sort(int *arr, int i, int j);
 int* merge(int *l1, int *l2, int n1, int n2);
 
 int main() {
-    int arr[] = {3, 2, 1};
-    int n = 3;
-
+    int arr[] = {9, 0, 3, 2, 6, 8, -10};
+    int n = sizeof(arr)/sizeof(int);
     int *output = sort(arr, 0, n);
-
     for (int i = 0; i < n; i++) {
         printf("%d, ", output[i]);
     }
@@ -25,10 +23,7 @@ int* sort(int *arr, int i, int j) {
         output[0] = arr[i];
         return output;
     }
-
-    int mid = (j - i) / 2;
-    printf("%d\n", mid);
-    
+    int mid = i + (j - i)/2;
     int *l1 = sort(arr, i, mid);
     int *l2 = sort(arr, mid, j);
 
@@ -37,10 +32,8 @@ int* sort(int *arr, int i, int j) {
 
 int* merge(int *l1, int *l2, int n1, int n2) {
     int* output = malloc(sizeof(int) * (n1 + n2));
-
     int i, j;
     i = j = 0;
-
     while (i < n1 && j < n2) {
         if (l1[i] < l2[j]) {
             output[i+j] = l1[i];
@@ -50,14 +43,11 @@ int* merge(int *l1, int *l2, int n1, int n2) {
             j++;
         }
     }
-
     if (i < n1) {
         memcpy((output + i + j), (l1 + i), (n1 - i) * sizeof(int));
     }
-    
     if (j < n2) {
         memcpy((output + i + j), (l2 + j), (n2 - j) * sizeof(int));
     }
-
     return output;
 }
