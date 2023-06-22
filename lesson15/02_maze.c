@@ -2,23 +2,11 @@
 #include <stdlib.h>
 #include "deque.c"
 
-/*
-  Maze
-  0 -- road
-  1 -- wall
-  -1 -- breadcrumb
-
-  Directions
-  2 -- up
-  3 -- down
-  4 -- left
-  5 -- right
-*/
-
+// MAZE
 #define ROAD 0
 #define WALL 1
 #define CRUMB -1
-
+// DIRECTIONS
 #define UP 2
 #define DOWN 3
 #define LEFT 4
@@ -40,16 +28,16 @@ int main() {
         {0, 1, 0, 0, 0},
         {0, 1, 0, 1, 0},
         {0, 1, 0, 1, 0},
-        {0, 0, 0, 1, 0},
-        {0, 1, 0, 0, 0}
+        {0, 0, 0, 0, 0},
+        {0, 1, 1, 0, 0}
     };
     startRow = startCol = 0;
     targetRow = targetCol = 4;
 
     struct CircularNode *head = NULL;
 
-    findAllPath(nrows, ncols, maze, startRow, startCol, targetRow, targetCol, &head);
-
+    int numPaths = findAllPath(nrows, ncols, maze, startRow, startCol, targetRow, targetCol, &head);
+    printf("\nThere's %d path(s) through the maze.\n", numPaths);
     return 0;
 }
 
@@ -100,7 +88,7 @@ int findAllPath(
 
         maze[startRow][startCol] = 0;
 
-        return path_up || path_down || path_left || path_right;
+        return path_up + path_down + path_left + path_right;
 }
 
 void printPath(struct CircularNode *head) {
@@ -109,12 +97,13 @@ void printPath(struct CircularNode *head) {
     do { // do-while loop
         int value = tmp->value;
 
-        if(value == UP) printf("up -> ");
-        if(value == DOWN) printf("down -> ");
-        if(value == LEFT) printf("left -> ");
-        if(value == RIGHT) printf("right -> ");
+        if(value == UP) printf("up");
+        if(value == DOWN) printf("down");
+        if(value == LEFT) printf("left");
+        if(value == RIGHT) printf("right");
 
         tmp = tmp->next;
+        if (tmp != head) printf(" -> ");
     } while (tmp != head);
 
     printf("\n");
